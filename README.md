@@ -1,4 +1,4 @@
-# GavinHart.github.io
+# Gavhart.github.io
 # ================
 #
 # This is the repository for my personal website. It is built using HTML and hosted on GitHub Pages.
