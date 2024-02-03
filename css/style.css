@@ -1,0 +1,205 @@
+:root {
+    /* Light theme colors */
+    --primary-bg-color: #f4f4f4;
+    --secondary-bg-color: #fff;
+    --primary-text-color: #333;
+    --secondary-text-color: #555;
+    --border-color: #ddd;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+  
+    /* Dark theme colors */
+    --dark-primary-bg-color: #333;
+    --dark-secondary-bg-color: #444;
+    --dark-primary-text-color: #f4f4f4;
+    --dark-secondary-text-color: #aaa;
+    --dark-border-color: #666;
+    --dark-box-shadow-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Default light theme styles are already defined with your :root variables */
+
+/* Dark theme styles */
+[data-theme="dark"] {
+    --primary-bg-color: var(--dark-primary-bg-color);
+    --secondary-bg-color: var(--dark-secondary-bg-color);
+    --primary-text-color: var(--dark-primary-text-color);
+    --secondary-text-color: var(--dark-secondary-text-color);
+    --border-color: var(--dark-border-color);
+    --box-shadow-color: var(--dark-box-shadow-color);
+  }
+  
+  [data-theme="dark"] body {
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+  }
+  
+  [data-theme="dark"] .box {
+    background-color: var(--secondary-bg-color);
+    box-shadow: 0 2px 5px var(--box-shadow-color);
+  }
+  
+  body {
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    /* Other styles */
+  }
+  
+  .box {
+    background-color: var(--secondary-bg-color);
+    box-shadow: 0 2px 5px var(--box-shadow-color);
+    /* Other styles */
+  }
+    
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Adjusted for better spacing and alignment */
+  }
+  
+  header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  nav img {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  
+  .box {
+    flex: 1 0 22%; /* Adjust flex-basis for 2x2 grid on larger screens */
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px; /* Adjust margin for consistent spacing */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+  }
+  
+  .box:hover {
+    transform: scale(1.03);
+  }
+  
+  .box h2, .box p {
+    margin: 0 0 15px; /* Ensure consistent spacing */
+  }
+  
+  .box a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    display: inline-block; /* Adjust display for links */
+    margin-top: 10px;
+  }
+  
+  .box a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .box {
+      flex: 0 0 48%; /* Adjust for 2x2 grid on medium screens */
+      margin: 1%; /* Adjust margin for smaller screens */
+    }
+  
+    nav img {
+      width: 80px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .box {
+      flex: 0 0 100%; /* Stack boxes on very small screens */
+      margin: 10px 0; /* Adjust margin for vertical stacking */
+    }
+  }
+  .theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  .theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+  }
+  
+  .theme-switch input {
+    display:none;
+  }
+  
+  .slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #66bb6a;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .em {
+    margin-left: 15px;
+    font-style: normal;
+  }
+  
+  
