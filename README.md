@@ -5,7 +5,7 @@
 #
 # The website is a work in progress and I will be adding to it over time.
 #
-# The website can be found at [gavinhart.github.io](https://gavinhart.github.io).
+# The website can be found at [gavhart.github.io](https://gavhart.github.io).
 #
 # The website is built using the following technologies:
 # - HTML
