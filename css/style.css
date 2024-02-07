@@ -1,5 +1,5 @@
 :root {
-    /* Light theme colors */
+    /* Liht theme colors */
     --primary-bg-color: #f4f4f4;
     --secondary-bg-color: #fff;
     --primary-text-color: #333;
@@ -84,9 +84,9 @@ body, html {
   }
   
   nav img {
-    width: 100px;
-    height: auto;
-    border-radius: 50%;
+    width: 200px;
+    display: block;
+    border-radius: 20%;
     margin: 0 auto;
   }
   
