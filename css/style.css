@@ -1,22 +1,21 @@
-:root {
-    /* Liht theme colors */
-    --primary-bg-color: #f4f4f4;
-    --secondary-bg-color: #fff;
-    --primary-text-color: #333;
-    --secondary-text-color: #555;
-    --border-color: #ddd;
-    --box-shadow-color: rgba(0, 0, 0, 0.1);
-  
-    /* Dark theme colors */
-    --dark-primary-bg-color: #333;
-    --dark-secondary-bg-color: #444;
-    --dark-primary-text-color: #f4f4f4;
-    --dark-secondary-text-color: #aaa;
-    --dark-border-color: #666;
-    --dark-box-shadow-color: rgba(255, 255, 255, 0.1);
-  }
+/* Add to style.css */
+.dark-mode {
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* Light text */
+}
 
-  /* Default light theme styles are already defined with your :root variables */
+.dark-mode nav, .dark-mode footer {
+  background-color: #333; /* Slightly lighter dark background for contrast */
+  color: #ffffff; /* Light text */
+}
+
+.dark-mode a {
+  color: #9A9AFF; /* Lighter link color for visibility */
+}
+.dark-mode h3, .dark-mode h1 {
+  color: black; /* Light text */
+}
+
 
 /* Dark theme styles */
 [data-theme="dark"] {
@@ -89,6 +88,15 @@ body, html {
     border-radius: 20%;
     margin: 0 auto;
   }
+  h1 {
+    font: 2px;
+  }
+  
+  .work-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
   
   .box {
     flex: 1 0 22%; /* Adjust flex-basis for 2x2 grid on larger screens */
@@ -150,9 +158,10 @@ body, html {
   .theme-switch-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
     margin: 20px;
   }
+  
   
   .theme-switch {
     display: inline-block;

@@ -1,22 +1,39 @@
+document.addEventListener('DOMContentLoaded', function() {
+  // Select the theme switch checkbox and the mode status element
+  const themeSwitch = document.getElementById('theme-switch-checkbox');
+  const modeStatus = document.getElementById('mode-status');
 
-  const themeSwitchCheckbox = document.getElementById('theme-switch-checkbox');
-  themeSwitchCheckbox.addEventListener('change', function() {
-    document.body.classList.toggle('dark-theme');
-  });
-
-  // Function to toggle theme variables
-  function toggleTheme(isDark) {
-    const root = document.documentElement;
-    root.style.setProperty('--primary-bg-color', isDark ? root.style.getPropertyValue('--dark-primary-bg-color') : '#f4f4f4');
-    root.style.setProperty('--secondary-bg-color', isDark ? root.style.getPropertyValue('--dark-secondary-bg-color') : '#fff');
-    root.style.setProperty('--primary-text-color', isDark ? root.style.getPropertyValue('--dark-primary-text-color') : '#333');
-    root.style.setProperty('--secondary-text-color', isDark ? root.style.getPropertyValue('--dark-secondary-text-color') : '#555');
-    root.style.setProperty('--border-color', isDark ? root.style.getPropertyValue('--dark-border-color') : '#ddd');
-    root.style.setProperty('--box-shadow-color', isDark ? root.style.getPropertyValue('--dark-box-shadow-color') : 'rgba(0, 0, 0, 0.1)');
+  // Function to toggle theme and update text
+  function toggleTheme() {
+      if (themeSwitch.checked) {
+          // If the checkbox is checked, enable dark mode and change text
+          document.body.classList.add('dark-mode'); // Add your dark mode class
+          modeStatus.innerText = 'Enable Light Mode!';
+      } else {
+          // If the checkbox is not checked, disable dark mode and change text
+          document.body.classList.remove('dark-mode'); // Remove your dark mode class
+          modeStatus.innerText = 'Enable Dark Mode!';
+      }
   }
 
-  // Listen for the toggle event to switch themes
-  themeSwitchCheckbox.addEventListener('change', function(event) {
-    toggleTheme(event.target.checked);
+  // Add an event listener to change the theme when the checkbox is clicked
+  themeSwitch.addEventListener('change', toggleTheme);
+
+  // Optional: Call toggleTheme on page load if the checkbox is already checked
+  // This is useful if you're saving the theme preference and setting the checkbox state on page load
+  if(themeSwitch.checked) {
+      toggleTheme();
+  }
+});
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+      });
   });
+});
+
+
 
